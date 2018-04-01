@@ -24,7 +24,6 @@ function dotProduct(matrix_one, matrix_two) {
   if (checkIfValid('*', matrix_one, matrix_two)) {
     var m1_row_length = matrix_one.length;
     var m1_col_length = matrix_one[0].length;
-    var m2_row_length = matrix_two.length;
     var m2_col_length = matrix_two[0].length;
     var result = []; // create a empty container called 'result'
 
