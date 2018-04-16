@@ -13,7 +13,8 @@ window.onload = function() {
 
       let getBoard = document.getElementById("board");
       let createTable = document.createElement("table");
-      let counter = 0;
+      let squares = 100;
+
  
       for (let i = 0; i < 10; i++) { // row
         let row = document.createElement("tr");
@@ -22,8 +23,16 @@ window.onload = function() {
         for (let j = 0; j < 10; j++) { // columns
           let col = document.createElement("td");
           col.setAttribute("class", `col col-${j+1}`);
+          let textNode = document.createTextNode(squares.toString());
+          col.appendChild(textNode);
           row.appendChild(col);
+          if (j == 9) {
+            squares-=10;
+          } else {
+            (i%2 == 0) ? squares-- : squares++;
+          }
         }
+
       }
       getBoard.appendChild(createTable);
 
